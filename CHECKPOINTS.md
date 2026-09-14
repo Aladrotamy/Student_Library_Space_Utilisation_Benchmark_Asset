@@ -42,3 +42,30 @@ The M1 project was authored and compiled in Overleaf. The preserved source is st
 - The overall mean occupancy rate calculated from the 72 observations was 71.59%.
 - Mean occupancy by zone, period, and day was also calculated for later analysis.
 
+
+## M2 — Literature and Data
+
+**Status:** Completed  
+**Defect:** No  
+**Milestone:** 2
+
+### Work completed
+- Added a literature review focused on academic library space use and student study environments.
+- Added a conceptual background connecting library space, study behaviour, utilisation, and student experience.
+- Added five academic references to `project_source/references.bib`.
+- Connected the bibliography to `main.tex` using `biblatex` and Biber.
+- Added in-text citations to the literature and conceptual background slides.
+- Added a dataset overview slide.
+- Added a variables and data structure slide.
+- Preserved the 72-observation synthetic dataset in `data.tex`.
+- Compiled the updated Beamer presentation successfully in TeXStudio.
+
+### M2 validation
+- Bibliography processed successfully with Biber.
+- In-text citations compiled successfully.
+- Dataset remains fully embedded in the project.
+- No planted defect was introduced.
+- No decoy was introduced.
+
+### Source
+The M2 working source is stored in `project_source/`.

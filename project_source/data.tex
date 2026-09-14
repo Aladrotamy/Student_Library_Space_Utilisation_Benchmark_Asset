@@ -1,6 +1,5 @@
 % ============================================================
 % Synthetic Library Space Utilisation Dataset
-% Benchmark source of truth
 % ============================================================
 %
 % This dataset is fully synthetic and was constructed specifically
@@ -23,25 +22,8 @@
 % P3 = 2:00-4:00 PM
 % P4 = 4:00-6:00 PM
 %
-% Variable notes:
-% Capacity = available seats in the zone.
-% OccupiedSeats = seats occupied during the observation.
-% AvgStudyDuration = average study duration in minutes.
-% StudentEntries = number of student entries recorded during the period.
-% SatisfactionScore = synthetic average satisfaction score on a 1-5 scale.
-%
-% Construction rules:
-% OccupiedSeats is between 0 and Capacity.
-% AvgStudyDuration is between 45 and 110 minutes.
-% StudentEntries is a whole-number count constructed to vary plausibly
-% with zone occupancy and study duration.
-% SatisfactionScore is between 1 and 5 and is allowed to vary across
-% observations. No zone, period, or day ranking is imposed in advance.
-%
-% Occupancy rate is DERIVED later as:
+% Occupancy rate is derived as:
 % OccupiedSeats / Capacity * 100
-%
-% The numerical values below are the authoritative raw observations.
 % ============================================================
 
 \pgfplotstableread[col sep=comma]{

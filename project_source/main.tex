@@ -4,6 +4,8 @@
 \usepackage{pgfplotstable}
 \usepackage{amsmath}
 \usepackage{array}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{references.bib}
 
 \pgfplotsset{compat=1.18}
 \input{data.tex}
@@ -69,6 +71,82 @@
         \item What patterns exist between student entries, study duration, and occupancy?
         \item What relationship exists between occupancy and student satisfaction?
     \end{enumerate}
+\end{frame}
+
+\section{Literature Review}
+
+\begin{frame}{Literature Review}
+	\begin{itemize}
+		\item Physical library space can influence how students choose and use study areas \parencite{cha2015physical}.
+		
+		\item Students use academic library spaces for different individual and collaborative study activities \parencite{bedwell2013seeing}.
+		
+		\item Students' needs and preferences can vary across different library spaces and study environments \parencite{may2015using}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Conceptual Background}
+	\begin{itemize}
+		\item Library space utilisation reflects how available study spaces are occupied and used by students.
+		
+		\item Students may select different study environments depending on their study activities and preferences \parencite{cha2015physical}.
+		
+		\item Academic library spaces can support both individual and collaborative study activities \parencite{bedwell2013seeing}.
+		
+		\item The design and characteristics of study spaces can influence students' experience of the library environment \parencite{defrain2020interiors,hegde2018work}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Dataset Overview}
+	\begin{table}
+		\centering
+		\begin{tabular}{lr}
+			\toprule
+			\textbf{Dataset Feature} & \textbf{Value} \\
+			\midrule
+			Observation days & 6 \\
+			Observation periods per day & 4 \\
+			Study zones & 3 \\
+			Total observations & 72 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\vspace{0.4cm}
+	
+	\begin{itemize}
+		\item The dataset covers a hypothetical Monday-to-Saturday observation week.
+		\item Each observation represents one study zone, one period, and one day.
+		\item The dataset is fully synthetic and embedded in the project.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Variables and Data Structure}
+	\small
+	\begin{table}
+		\centering
+		\begin{tabular}{p{3.2cm}p{6.8cm}}
+			\toprule
+			\textbf{Variable} & \textbf{Description} \\
+			\midrule
+			Day & Day of observation \\
+			Period & Two-hour observation period \\
+			Zone & Library study zone \\
+			Capacity & Number of available seats \\
+			Occupied Seats & Number of occupied seats during observation \\
+			Avg. Study Duration & Average study duration in minutes \\
+			Student Entries & Number of student entries recorded \\
+			Satisfaction Score & Student satisfaction rating on a 1--5 scale \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\vspace{0.2cm}
+	
+	\begin{itemize}
+		\item Occupancy rate is derived from Occupied Seats and Capacity.
+		\item The raw observations are embedded in \texttt{data.tex}.
+	\end{itemize}
 \end{frame}
 
 \section{Data and Methodology}
