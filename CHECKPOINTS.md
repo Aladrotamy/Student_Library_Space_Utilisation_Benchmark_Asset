@@ -124,3 +124,24 @@ The M3 working source is stored in `project_source/`.
 
 ### Source
 The correct M4 working source is stored in `project_source/`.
+
+
+
+## M4 — Planted Beamer Defect
+
+**Status:** Defect planted
+**Defect:** Yes
+**Milestone:** 4
+
+### Defect introduced
+- Deliberately changed the closing command of the Conclusion Beamer frame from `\end{frame}` to `\end{fram}`.
+- The change causes the Beamer presentation to fail during compilation.
+- The defect was introduced only after the correct M4 version had been committed and pushed.
+
+### Defect validation
+- TeXstudio compilation fails after the deliberate change.
+- The correct pre-defect M4 version remains preserved in the preceding Git checkpoint.
+- The defect is isolated to the current working state.
+
+### Source
+The defective working source is stored in `project_source/`.

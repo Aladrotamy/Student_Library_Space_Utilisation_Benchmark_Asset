@@ -1,0 +1,408 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{references.bib}
+
+\pgfplotsset{compat=1.18}
+\input{data.tex}
+\usetheme{Madrid}
+
+\title{Analysing University Library Space Utilisation and Student Study Patterns}
+\author{Oluwadurotimi Alade}
+\institute{University of Ibadan}
+\date{September 2026}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Presentation Overview}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Background}
+    \begin{itemize}
+        \item University libraries provide spaces for individual and collaborative study.
+        \item The way students use these spaces can vary across zones, time periods, and days.
+        \item Understanding these patterns can support better use of available study spaces.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+    Library study spaces have limited seating capacity, but demand may vary
+    across different zones, time periods, and days. A structured analysis of
+    occupancy, study duration, student entries, and satisfaction can help
+    identify patterns in space utilisation.
+\end{frame}
+
+\begin{frame}{Aim and Objectives}
+    \textbf{Aim}
+
+    To analyse university library space utilisation and student study patterns
+    using synthetic observational data.
+
+    \vspace{0.4cm}
+
+    \textbf{Objectives}
+    \begin{enumerate}
+        \item Measure occupancy rates across library study zones.
+        \item Compare utilisation across time periods and days.
+        \item Examine study duration, student entries, and satisfaction.
+        \item Explore relationships among selected study-pattern variables.
+        \item Develop practical recommendations from the observed patterns.
+    \end{enumerate}
+\end{frame}
+
+\section{Research Questions}
+
+\begin{frame}{Research Questions}
+    \begin{enumerate}
+        \item How does library space occupancy vary across the three study zones?
+        \item How does occupancy vary across different time periods?
+        \item How does occupancy vary across days of the week?
+        \item What patterns exist between student entries, study duration, and occupancy?
+        \item What relationship exists between occupancy and student satisfaction?
+    \end{enumerate}
+\end{frame}
+
+\section{Literature Review}
+
+\begin{frame}{Literature Review}
+	\begin{itemize}
+		\item Physical library space can influence how students choose and use study areas \parencite{cha2015physical}.
+		
+		\item Students use academic library spaces for different individual and collaborative study activities \parencite{bedwell2013seeing}.
+		
+		\item Students' needs and preferences can vary across different library spaces and study environments \parencite{may2015using}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Conceptual Background}
+	\begin{itemize}
+		\item Library space utilisation reflects how available study spaces are occupied and used by students.
+		
+		\item Students may select different study environments depending on their study activities and preferences \parencite{cha2015physical}.
+		
+		\item Academic library spaces can support both individual and collaborative study activities \parencite{bedwell2013seeing}.
+		
+		\item The design and characteristics of study spaces can influence students' experience of the library environment \parencite{defrain2020interiors,hegde2018work}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Dataset Overview}
+	\begin{table}
+		\centering
+		\begin{tabular}{lr}
+			\toprule
+			\textbf{Dataset Feature} & \textbf{Value} \\
+			\midrule
+			Observation days & 6 \\
+			Observation periods per day & 4 \\
+			Study zones & 3 \\
+			Total observations & 72 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\vspace{0.4cm}
+	
+	\begin{itemize}
+		\item The dataset covers a hypothetical Monday-to-Saturday observation week.
+		\item Each observation represents one study zone, one period, and one day.
+		\item The dataset is fully synthetic and embedded in the project.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Variables and Data Structure}
+	\small
+	\begin{table}
+		\centering
+		\begin{tabular}{p{3.2cm}p{6.8cm}}
+			\toprule
+			\textbf{Variable} & \textbf{Description} \\
+			\midrule
+			Day & Day of observation \\
+			Period & Two-hour observation period \\
+			Zone & Library study zone \\
+			Capacity & Number of available seats \\
+			Occupied Seats & Number of occupied seats during observation \\
+			Avg. Study Duration & Average study duration in minutes \\
+			Student Entries & Number of student entries recorded \\
+			Satisfaction Score & Student satisfaction rating on a 1--5 scale \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\vspace{0.2cm}
+	
+	\begin{itemize}
+		\item Occupancy rate is derived from Occupied Seats and Capacity.
+		\item The raw observations are embedded in \texttt{data.tex}.
+	\end{itemize}
+\end{frame}
+
+\section{Data and Methodology}
+
+\begin{frame}{Study Design}
+    \begin{itemize}
+        \item Data type: fully synthetic benchmark data.
+        \item Observation period: one hypothetical week, Monday to Saturday.
+        \item Study zones: Quiet, General, and Group.
+        \item Four two-hour observation periods were used each day.
+        \item Total observations: 72.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Variables}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Variable} & \textbf{Description} \\
+            \midrule
+            Day & Day of observation \\
+            Period & Two-hour observation period \\
+            Zone & Library study zone \\
+            Capacity & Available seats in the zone \\
+            Occupied Seats & Seats occupied during observation \\
+            Study Duration & Average study duration in minutes \\
+            Student Entries & Student entries recorded during the period \\
+            Satisfaction & Average satisfaction score from 1 to 5 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Observation Periods}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{cl}
+            \toprule
+            \textbf{Period} & \textbf{Time} \\
+            \midrule
+            P1 & 8:00--10:00 AM \\
+            P2 & 10:00 AM--12:00 PM \\
+            P3 & 2:00--4:00 PM \\
+            P4 & 4:00--6:00 PM \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.3cm}
+
+    Each observation covers one study zone during one two-hour period
+    on one day.
+\end{frame}
+
+\section{Preliminary Results}
+
+\begin{frame}{Preliminary Occupancy Result}
+    The current validated dataset gives an overall mean occupancy rate of:
+
+    \[
+    \boxed{71.59\%}
+    \]
+\end{frame}
+
+\section{Methodology}
+
+\begin{frame}{Research Design and Methodology}
+	\begin{itemize}
+		\item The study uses a descriptive and comparative observational design.
+		
+		\item The observation period covers a hypothetical Monday-to-Saturday week.
+		
+		\item Observations were recorded across three study zones and four two-hour periods each day.
+		
+		\item Each observation represents one study zone, one period, and one day.
+		
+		\item The analysis focuses on occupancy, study duration, student entries, and satisfaction.
+		
+		\item All observations are synthetic and embedded in the project for benchmark reproducibility.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Statistical Analysis Approach}
+	\begin{itemize}
+		\item Occupancy rate is calculated as:
+		\[
+		\text{Occupancy Rate} =
+		\frac{\text{Occupied Seats}}{\text{Capacity}}\times100
+		\]
+		
+		\item Descriptive statistics are used to summarise occupancy, study duration, student entries, and satisfaction.
+		
+		\item Mean occupancy is compared across study zones, observation periods, and days.
+		
+		\item Pearson correlation is used to examine linear associations between the quantitative variables.
+		
+		\item Results are interpreted as descriptive associations rather than causal effects.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Descriptive Analysis}
+	\small
+	\begin{table}
+		\centering
+		\begin{tabular}{lr}
+			\toprule
+			\textbf{Measure} & \textbf{Overall Mean} \\
+			\midrule
+			Occupancy Rate & 71.59\% \\
+			Average Study Duration & 76.53 minutes \\
+			Student Entries & 22.60 \\
+			Satisfaction Score & 3.14 / 5 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\vspace{0.3cm}
+	
+	\begin{itemize}
+		\item Mean occupancy across the 72 observations was 71.59\%.
+		\item Average study duration was 76.53 minutes.
+		\item The mean number of student entries was 22.60.
+		\item Mean satisfaction was 3.14 on the 1--5 scale.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Comparative and Correlation Analysis}
+	\scriptsize
+	
+	\begin{columns}[T]
+		
+		\begin{column}{0.48\textwidth}
+			\textbf{Mean Occupancy by Zone}
+			
+			\begin{tabular}{lr}
+				\toprule
+				\textbf{Zone} & \textbf{Occupancy} \\
+				\midrule
+				Quiet & 79.69\% \\
+				General & 73.54\% \\
+				Group & 61.53\% \\
+				\bottomrule
+			\end{tabular}
+			
+			\vspace{0.25cm}
+			
+			\textbf{Mean Occupancy by Period}
+			
+			\begin{tabular}{lr}
+				\toprule
+				\textbf{Period} & \textbf{Occupancy} \\
+				\midrule
+				P1 & 62.36\% \\
+				P2 & 74.26\% \\
+				P3 & 66.34\% \\
+				P4 & 83.38\% \\
+				\bottomrule
+			\end{tabular}
+		\end{column}
+		
+		\begin{column}{0.48\textwidth}
+			\textbf{Pearson Correlations}
+			
+			\begin{tabular}{lr}
+				\toprule
+				\textbf{Variable Pair} & \textbf{r} \\
+				\midrule
+				Occupancy--Duration & 0.063 \\
+				Occupancy--Entries & 0.508 \\
+				Occupancy--Satisfaction & -0.013 \\
+				Duration--Entries & 0.104 \\
+				Duration--Satisfaction & 0.726 \\
+				Entries--Satisfaction & 0.018 \\
+				\bottomrule
+			\end{tabular}
+			
+			\vspace{0.25cm}
+			
+			\begin{itemize}
+				\item P4 had the highest mean occupancy.
+				\item Occupancy and student entries showed a moderate positive association.
+				\item Study duration and satisfaction showed a strong positive association.
+			\end{itemize}
+		\end{column}
+		
+	\end{columns}
+\end{frame}
+
+\section{Results and Discussion}
+
+\begin{frame}{Results and Discussion}
+	\small
+	\begin{itemize}
+		\item The Quiet Zone recorded the highest mean occupancy at 79.69\%, followed by the General Zone at 73.54\% and the Group Zone at 61.53\%.
+		
+		\item P4 recorded the highest mean occupancy at 83.38\%, indicating greater space use during the final observation period.
+		
+		\item Saturday recorded the lowest mean daily occupancy at 64.65\%, while Wednesday recorded the highest at 74.93\%.
+		
+		\item Occupancy and student entries showed a moderate positive association ($r=0.508$).
+		
+		\item Study duration and satisfaction showed a strong positive association ($r=0.726$).
+		
+		\item These findings describe patterns and associations within the synthetic benchmark dataset and do not establish causal relationships.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Recommendations and Limitations}
+	\small
+	
+	\textbf{Recommendations}
+	\begin{itemize}
+		\item Review space allocation in the Quiet Zone because it recorded the highest mean occupancy.
+		\item Pay particular attention to demand during P4, which recorded the highest mean occupancy.
+		\item Consider study duration when evaluating student experience, given its positive association with satisfaction.
+		\item Continue monitoring occupancy and student use across individual zones and periods.
+	\end{itemize}
+	
+	\vspace{0.15cm}
+	
+	\textbf{Limitations}
+	\begin{itemize}
+		\item The dataset is fully synthetic and represents one hypothetical observation week.
+		\item The analysis covers three study zones and four observation periods per day.
+		\item The observational design identifies patterns and associations but does not establish causation.
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Conclusion}
+	\small
+	\begin{itemize}
+		\item The analysis shows clear differences in library space utilisation across study zones and observation periods.
+		
+		\item The Quiet Zone recorded the highest mean occupancy, while the Group Zone recorded the lowest.
+		
+		\item P4 was the busiest observation period, while Saturday had the lowest mean daily occupancy.
+		
+		\item Occupancy was moderately associated with student entries, while study duration showed a strong positive association with satisfaction.
+		
+		\item The findings provide a basis for targeted monitoring and planning of library study spaces.
+	\end{itemize}
+	
+	\vspace{0.35cm}
+	
+	\centering
+	\textbf{Thank you}
+	
+\end{fram}
+
+\begin{frame}
+    \centering
+    \Huge Questions?
+\end{frame}
+
+\end{document}
