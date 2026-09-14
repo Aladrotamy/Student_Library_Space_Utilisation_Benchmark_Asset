@@ -1,0 +1,44 @@
+# Checkpoints
+
+## M1 — Project Foundation
+
+**Status:** Completed  
+**Defect:** No  
+**Milestone:** 1
+
+### Work completed
+- Created the Beamer presentation project in Overleaf.
+- Established the presentation title, author, and institution.
+- Added the background, problem statement, aim and objectives, and research questions.
+- Added the study design and variable definitions.
+- Defined the four observation periods.
+- Created and embedded the synthetic library space utilisation dataset.
+- Established 72 observations covering 6 days, 4 periods, and 3 study zones.
+- Connected `main.tex` to `data.tex`.
+- Compiled the project successfully in Overleaf.
+- Downloaded the Overleaf project source and preserved the M1 source files in `milestone_1_base/`.
+
+### Validation completed
+- 72 observations confirmed.
+- Six observation days and four periods confirmed.
+- Three study zones confirmed.
+- Zone capacities confirmed as Quiet = 40, General = 60, Group = 30.
+- Occupied seats did not exceed zone capacity.
+- Study duration values were within the 45–110 minute construction range.
+- Satisfaction scores were within the 1–5 scale.
+- Student entries were nonnegative whole numbers.
+- The actual observed ranges were recorded as:
+  - Occupied seats: 12–56
+  - Average study duration: 45–108 minutes
+  - Student entries: 8–56
+  - Satisfaction score: 2.2–4.0
+
+### Source
+The M1 project was authored and compiled in Overleaf. The preserved source is stored in `milestone_1_base/`.
+
+### Commands/checks used
+- `grep` was used to confirm the 72 observations and day-period combinations.
+- `awk` was used to validate capacities, study duration, satisfaction scores, student entries, and occupancy calculations.
+- The overall mean occupancy rate calculated from the 72 observations was 42.60%.
+- Mean occupancy by zone, period, and day was also calculated for later analysis.
+
