@@ -39,6 +39,6 @@ The M1 project was authored and compiled in Overleaf. The preserved source is st
 ### Commands/checks used
 - `grep` was used to confirm the 72 observations and day-period combinations.
 - `awk` was used to validate capacities, study duration, satisfaction scores, student entries, and occupancy calculations.
-- The overall mean occupancy rate calculated from the 72 observations was 42.60%.
+- The overall mean occupancy rate calculated from the 72 observations was 71.59%.
 - Mean occupancy by zone, period, and day was also calculated for later analysis.
 
