@@ -69,3 +69,31 @@ The M1 project was authored and compiled in Overleaf. The preserved source is st
 
 ### Source
 The M2 working source is stored in `project_source/`.
+
+
+
+## M3 — Methodology and Analysis
+
+**Status:** Completed
+**Defect:** No
+**Milestone:** 3
+
+### Work completed
+- Added the research design and methodology section.
+- Added the statistical analysis approach and occupancy rate formula.
+- Added overall descriptive statistics derived from the embedded 72-observation dataset.
+- Added comparative analysis of study zones and observation periods.
+- Added Pearson correlation results for the quantitative variables.
+- Added `project_source/analysis.tex` as the internal analysis source containing the verified numerical results.
+- Preserved the fully synthetic dataset in `project_source/data.tex`.
+- Compiled the updated Beamer presentation successfully in TeXstudio.
+
+### M3 validation
+- The presentation compiled successfully after the M3 additions.
+- Numerical results are based on the embedded 72-observation dataset.
+- Correlation results are reported as associations, not causal effects.
+- No planted defect was introduced.
+- No decoy was introduced.
+
+### Source
+The M3 working source is stored in `project_source/`.
