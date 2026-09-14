@@ -97,3 +97,30 @@ The M2 working source is stored in `project_source/`.
 
 ### Source
 The M3 working source is stored in `project_source/`.
+
+
+
+## M4 — Results, Discussion, Defense, and Decoy
+
+**Status:** Completed
+**Defect:** No
+**Milestone:** 4
+
+### Work completed
+- Added results and discussion based on the verified analysis of the 72-observation synthetic dataset.
+- Added recommendations and study limitations.
+- Added the conclusion and retained the final Questions slide.
+- Preserved the presentation at approximately 22 slides/pages.
+- Added the unused decoy file `project_source/archived_library_notes.tex`.
+- Verified that the decoy is not referenced by `main.tex`.
+- Compiled the correct M4 presentation successfully in TeXstudio.
+
+### M4 validation
+- The correct M4 presentation compiled successfully.
+- Results and numerical statements are based on the embedded synthetic dataset.
+- The decoy is present but unused.
+- No planted defect has been introduced in this checkpoint.
+- The correct M4 state is preserved before defect planting.
+
+### Source
+The correct M4 working source is stored in `project_source/`.
