@@ -22,20 +22,31 @@ The project contains 72 observations covering six days, four observation
 periods, and three library study zones.
 
 ## Planted defects
-None at M1.
+One deliberate Beamer/LaTeX defect is planted in the current project state.
 
-A deliberate Beamer/LaTeX defect will be planted only after the correct
-project version has been preserved in a previous milestone.
+The defect changes the closing command of the Conclusion frame from
+`\end{frame}` to `\end{fram}`, causing Beamer compilation to fail.
+
+The correct version is preserved in the preceding M4 results checkpoint,
+the M5 final snapshot, and the golden output.
 
 ## Decoys
-A plausible unused supplementary/archived data file will be included later
-in the benchmark asset. It will not be referenced by the research project
-and will be documented here once added.
+The project contains an unused supplementary file:
+
+`project_source/archived_library_notes.tex`
+
+The file contains plausible archived notes about library space features
+such as seating layout, lighting, charging points, and noise levels. It is
+not referenced by `main.tex` and is not part of the current analysis.
 
 ## Room to vary
 Future benchmark tasks may vary the presentation content, analysis,
 formatting, chart presentation, references, or Beamer structure while
 retaining the embedded dataset and core research context.
 
-## M1 status
-Foundation completed and compiled successfully in Overleaf.
+## Final asset status
+The correct project version was completed and compiled successfully before
+the deliberate defect was planted.
+
+The benchmark package includes milestone snapshots, the planted-defect
+state, requirements, documentation, and a verified 22-page golden output.

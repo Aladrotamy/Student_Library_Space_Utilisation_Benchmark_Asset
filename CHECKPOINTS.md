@@ -144,4 +144,33 @@ The correct M4 working source is stored in `project_source/`.
 - The defect is isolated to the current working state.
 
 ### Source
-The defective working source is stored in `project_source/`.
+The defective M4 working source is stored in `project_source/`.
+
+## M5 — Final Benchmark Package and Quality Assurance
+
+**Status:** Completed
+**Defect:** No
+**Milestone:** 5
+
+### Work completed
+- Added the final benchmark requirements document as `requirements.pdf`.
+- Preserved the correct M4 project state in `milestone_4_results/`.
+- Preserved the final correct project snapshot in `milestone_5_final/`.
+- Preserved the planted-defect checkpoint in `milestone_4_defect/`.
+- Added the verified golden output in `golden_output/`.
+- Added the compiled 22-page golden presentation as `golden_output/main.pdf`.
+- Updated `README.md` and `ASSET.md` to document the completed benchmark package.
+- Preserved the unused decoy file and documented its role.
+- Verified the planted Beamer defect and the corresponding correct pre-defect versions.
+
+### M5 validation
+- `requirements.pdf` is present in the asset root.
+- The correct M4, defective M4, M5 final, and golden output states were verified.
+- The correct project version compiled successfully before defect planting.
+- The golden output contains a successfully compiled 22-page Beamer presentation.
+- The planted defect remains isolated to the defective project state.
+- The decoy file is present and is not referenced by `main.tex`.
+- The benchmark package structure is complete.
+
+### Source
+The final benchmark package and supporting snapshots are stored in the asset root and milestone directories.

@@ -1,4 +1,4 @@
-# Student Library Space Utilisation Benchmark Asset
+ # Student Library Space Utilisation Benchmark Asset
 
 ## Overview
 
@@ -52,6 +52,20 @@ The observation period covers a hypothetical Monday-to-Saturday week.
 
 The raw observations are embedded in `project_source/data.tex`.
 
+## Data Traceability
+
+The embedded raw dataset is the source of truth for the analysis.
+
+Derived statistics, tables, and charts are calculated from the embedded observations rather than manually invented or entered as unrelated values.
+
+The occupancy rate is derived as:
+
+Occupancy Rate = (Occupied Seats / Capacity) × 100
+
+## Literature and References
+
+The presentation contains an academic literature review and in-text citations supported by five references stored in `project_source/references.bib`.
+
 ## Benchmark Structure
 
 ```text
@@ -68,38 +82,3 @@ Student_Library_Space_Utilisation_Benchmark_Asset/
 ├── milestone_4_results/
 ├── milestone_5_final/
 └── golden_output/
-```
-
-## M1 — Project Foundation
-
-The Beamer foundation, research framing, study design, variable definitions, observation periods, and synthetic dataset were created and compiled successfully in Overleaf.
-
-## M1 Status
-
-M1 is completed and preserved locally in `milestone_1_base/`.
-
-The project has been compiled successfully in Overleaf and the M1 source has been preserved from the Overleaf download.
-
-## Data Traceability
-
-The embedded raw dataset is the source of truth for the analysis.
-
-Derived statistics, tables, and charts should be calculated from the embedded observations rather than manually invented or entered as unrelated values.
-
-The occupancy rate is derived as:
-
-Occupancy Rate = (Occupied Seats / Capacity) × 100
-
-## Synthetic Data Notice
-
-The observations are synthetic benchmark data created specifically for this asset. They are not presented as measurements from a real university library.
-
-## Planned Milestones
-
-- **M1:** Project Foundation
-- **M2:** Literature and Data
-- **M3:** Methodology and Analysis
-- **M4:** Results, Discussion, Defense, and Defect
-- **M5:** Final Benchmark Package and Quality Assurance
-
-The later milestones are listed here only as the planned project roadmap. They are not part of the current M1 implementation.
